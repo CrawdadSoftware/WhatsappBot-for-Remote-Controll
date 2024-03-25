@@ -1,0 +1,61 @@
+*** WhatsApp Bot Setup with Twilio and Adding New Sounds ***
+
+Part 1: Registration and Twilio Configuration for WhatsApp
+
+Create a Twilio Account
+
+Go to the Twilio website and click "Sign Up" to create a new account. Follow the instructions to complete the registration process.
+Find Your 'Account SID' and 'Auth Token'
+
+After logging into your account, on the main dashboard panel, you will find your Account SID and Auth Token. These will be needed to configure the script. Save them in a safe place.
+Configure WhatsApp Sandbox
+
+In the Twilio panel, find the "All Products & Services" section in the menu and select "Programmable Messaging", then in the submenu select "Try it Out" > "Try WhatsApp".
+You will be redirected to the WhatsApp Sandbox page. Follow the instructions to link your WhatsApp number to the Sandbox by sending it a specific code.
+
+Part 2: Python Installation and Necessary Libraries
+
+Python Installation
+
+Download Python from python.org and install it, ensuring that the option to add Python to PATH (environment variable) is selected during installation.
+
+Python Libraries Installation
+
+Open a terminal (on Windows this could be Command Prompt or PowerShell, on MacOS/Linux a terminal) and install the necessary libraries by typing:
+pip install twilio pygame
+
+Part 3: Python Script Preparation
+
+Creating the Script
+
+Open a text editor (e.g., Notepad, but a free code editor like Visual Studio Code or PyCharm is recommended) and copy into it the script code provided above. Replace YOUR_ACCOUNT_SID and YOUR_AUTH_TOKEN in the code with the appropriate values from your Twilio account.
+
+Save the Script
+
+Save the file with the .py extension, e.g., whatsapp_bot.py.
+
+Part 4: Adding New Sounds
+
+Adding Sounds to the Script
+
+In the script, you will find a section variable messages_to_sounds, which contains a dictionary of messages and corresponding sounds. To add a new sound, add a line in the format "your_message": "file_name.mp3", e.g.:
+"goodbye":"goodbye.mp3"
+
+Ensure the .mp3 file you want to play is in the same directory as your script.
+
+Playing Sounds
+
+To play a sound, send a message (e.g., "goodbye") to your WhatsApp number in the Twilio Sandbox. The script will play the sound assigned to that message.
+
+Part 5: Running the Script
+
+Running the Script
+Open a terminal, navigate to the directory where you saved your script (using the cd path_to_folder command), and then type:
+python whatsapp_bot.py
+
+The script will start running and will play sounds based on the messages received.
+
+Remember to stop the script before closing the terminal. You can do this by pressing the Ctrl + C key combination in the terminal window where the script is running.
+
+Additional Tips
+Automatic Start: If you want your script to start automatically when the system boots, you will need to use mechanisms specific to your operating system (e.g., Scheduled Tasks in Windows, crontab or systemd in Linux). This may require additional instructions and configuration.
